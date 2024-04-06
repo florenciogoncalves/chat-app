@@ -37,8 +37,8 @@ export default class Emojis {
         const emojiGroups = [
             {
                 title: 'Smileys e pessoas',
-                headers: ['smiley-emotion', 'people-body'],
-                emojis: emojiGroupFilter(['smiley-emotion', 'people-body'])
+                headers: ['smileys-emotion', 'people-body'],
+                emojis: emojiGroupFilter(['smileys-emotion', 'people-body'])
             },
             {
                 title: 'Animais e natureza',
@@ -77,9 +77,9 @@ export default class Emojis {
             },
         ]
 
-        emojiGroups.forEach(group => {
+        emojiGroups.forEach((group, idx) => {
             const container = document.createElement('div')
-            container.id = 'group-of-' + group.title
+            container.id = 'group-' + idx
             container.classList.add('emojis-subgroup', 'd-grid')
 
             const title = document.createElement('p')

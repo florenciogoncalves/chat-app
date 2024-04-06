@@ -103,7 +103,10 @@
       class="chat-body h-100 overflow-x-hidden overflow-y-auto py-3 d-flex gap-1 flex-column mx-1 px-4"
     ></div>
     <!-- Emoji container -->
-    <div class="p-2 px-1 bg-gray--dark z-100 d-flex flex-column">
+    <div
+      id="emojis--container"
+      class="p-2 px-1 bg-gray--dark z-100 flex-column _expanded"
+    >
       <ul class="nav mb-2">
         <li class="nav-item col">
           <button
@@ -111,7 +114,7 @@
             class="nav-link text-secondary fs-4 m-auto"
             title="Recentes"
           >
-            <i class="fa-regular fa-clock"></i>
+            <i class="fa-solid fa-clock"></i>
           </button>
         </li>
         <li class="nav-item col">
@@ -120,7 +123,7 @@
             class="nav-link text-secondary fs-4 m-auto"
             title="Smileys e pessoas"
           >
-            <i class="fa-regular fa-face-grin-wide"></i>
+            <i class="fa-solid fa-face-grin-wide"></i>
           </button>
         </li>
         <li class="nav-item col">
@@ -156,34 +159,34 @@
             class="nav-link text-secondary fs-4 m-auto"
             title="Viagens e locais"
           >
-            Active link
+            <i class="fa-solid fa-car"></i>
           </button>
         </li>
         <li class="nav-item col">
           <button
             type="button"
             class="nav-link text-secondary fs-4 m-auto"
-            title=""
+            title="Objectos"
           >
-            Active link
+            <i class="fa-solid fa-lightbulb"></i>
           </button>
         </li>
         <li class="nav-item col">
           <button
             type="button"
             class="nav-link text-secondary fs-4 m-auto"
-            title=""
+            title="Símbolos"
           >
-            Active link
+            <i class="fa-solid fa-hashtag"></i>
           </button>
         </li>
         <li class="nav-item col">
           <button
             type="button"
             class="nav-link text-secondary fs-4 m-auto"
-            title=""
+            title="Bandeiras"
           >
-            Active link
+            <i class="fa-solid fa-flag"></i>
           </button>
         </li>
       </ul>
@@ -198,7 +201,10 @@
       style="--bs-bg-opacity: 0.1"
     >
       <div class="d-flex gap-3 align-items-center">
-        <button class="btn d-flex px-0">
+        <button class="btn d-flex px-0" type="button" id="close-emojis">
+          <i class="fa-solid fa-xmark text-secondary fs-5"></i>
+        </button>
+        <button class="btn d-flex px-0" id="open-emojis">
           <i class="fa-solid fa-face-grin-wide text-secondary fs-5"></i>
         </button>
         <button type="button" class="btn d-flex px-0">
@@ -253,18 +259,5 @@
     }
   });
 </script>
-<script type="module">
-  import Emojis from "/assets/scripts/emojis.js";
-
-  const emojis = new Emojis("emojis-container", "message-input");
-
-  async function main() {
-    await emojis.insertAllEmojisInto();
-    document.querySelectorAll(".set-emoji").forEach((btn) => {
-      btn.addEventListener("click", (evt) => emojis.getEmoji(evt));
-    });
-  }
-
-  main();
-</script>
+<script type="module" src="/assets/scripts/script.js"></script>
 <%- include('./partials/footer.ejs') %>

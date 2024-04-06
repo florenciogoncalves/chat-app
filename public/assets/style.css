@@ -1,0 +1,104 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+    font-family: "Montserrat", sans-serif;
+}
+
+*::-webkit-scrollbar {
+    background: transparent;
+    width: 5px;
+}
+
+*::-webkit-scrollbar-thumb{
+    background: rgba(136, 136, 136, .3);
+}
+
+html {
+    height: 100%;
+}
+
+.aside {
+    display: grid;
+    grid-template-rows: auto 1fr;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.chat-body::-webkit-scrollbar {
+    width: 5px;
+    background: transparent;
+}
+.chat-body::-webkit-scrollbar-thumb {
+    border-radius: 5px;
+    background: #000;
+}
+
+.message--text {
+    width: max-content;
+    max-width: 60%;
+}
+ 
+.search-input::placeholder, .message-input::placeholder {
+    color: #888;
+}
+
+.user-profile-picture {
+    width: 2.5rem;
+    height: 2.5rem;
+    border: none;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.text--min {
+    font-size: .85rem;
+}
+
+.list-of-users--user-picture {
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: center;
+}
+
+aside.aside {
+    width: 30%;
+}
+
+.aside-branding {
+    font-size: .725rem;
+}
+
+.list-of-users--user:hover {
+    background-color: rgba(136, 136, 136, .3);
+}
+
+.header--icons i {
+    font-size: 1.175rem;
+}
+
+#emojis-container {
+    display: grid;
+    grid-template-columns: repeat(15, auto);
+    max-height: 42vh;
+    height: 15rem;
+    z-index: 1000;
+}
+
+.set-emoji {
+    width: 2rem;
+    height: 2rem;
+}
+
+.bg-gray {
+    background-color: #383d43;
+}
+
+.bg-gray--dark {
+    background-color: #292D32;
+}

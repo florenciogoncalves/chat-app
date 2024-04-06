@@ -1,0 +1,270 @@
+<%- include('./partials/header.ejs') %>
+<div class="d-flex h-100">
+  <aside
+    class="aside col-3 h-100 border-end border-secondary overflow-x-hidden"
+  >
+    <div class="list-header border-secondary d-flex flex-column">
+      <div
+        class="col-12 px-3 py-2 d-flex align-items-center bg-secondary bg--opacity"
+        style="--bs-bg-opacity: 0.3"
+      >
+        <img
+          src="https://i.pinimg.com/236x/14/71/d6/1471d6e29dce10e758a39fced2540ab3.jpg"
+          class="user-profile-picture bg-dark"
+        />
+        <div class="ms-auto header--icons d-flex align-items-center">
+          <button class="btn">
+            <i class="fa-solid fa-spinner text-secondary"></i>
+          </button>
+          <button class="btn">
+            <i class="fa-regular fa-message text-secondary"></i>
+          </button>
+          <a href="/logout" class="ms-3">
+            <i class="fa-solid fa-right-from-bracket text-danger"></i>
+          </a>
+        </div>
+      </div>
+      <div class="mt-2 p-3 pe-0 pt-0 d-flex align-items-center">
+        <input
+          type="text"
+          class="search-input text--min form-control bg-secondary border-dark text-light"
+          style="--bs-bg-opacity: 0.3"
+          name="search"
+          placeholder="Pesquise um nome"
+        />
+        <button class="btn d-flex justify-content-center align-items-center">
+          <i class="fa-solid fa-filter text-secondary"></i>
+        </button>
+      </div>
+    </div>
+    <ul class="list-of-users h-100 overflow-y-auto d-flex flex-column">
+      <% for(count = 0; count < 10; count++) { %>
+      <li class="list-of-users--user d-flex ps-3 gap-4">
+        <img
+          class="list-of-users--user-picture my-3"
+          src="<%= count != 0 ?  'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ7iQEpz-n3TeIP8Se-FeJF1JxetoyZABu_057v0zewrw&s' : 'https://i0.wp.com/dmtalkies.com/wp-content/uploads/2022/04/ezgif-4-2cefe063e9.jpg' %>"
+        />
+        <div class="col border-bottom border-secondary d-flex overflow-hidden">
+          <div class="my-auto overflow-hidden">
+            <div>Dev Senior <%= count %></div>
+            <div class="text--min text-nowrap overflow-hidden text-truncate">
+              Hello dev! Are you commited in the project yesterday?
+            </div>
+          </div>
+          <div class="text--min p-2">19:57</div>
+        </div>
+      </li>
+      <% } %>
+      <!-- Last one -->
+      <p
+        class="aside-branding border-top border-secondary py-3 text-center text--min ms-3 mt-auto mb-0"
+      >
+        Welcome to chatApp. By
+        <a
+          href="https://github.com/florenciogoncalves"
+          target="_blank"
+          class="text-info text-decoration-none"
+          >Florêncio Gonçalves</a
+        >
+      </p>
+    </ul>
+  </aside>
+  <!-- Chat -->
+  <form id="chat" method="post" class="col d-flex flex-column">
+    <!-- Chat Header -->
+    <div
+      class="chat-header d-flex align-items-center px-4 py-2 gap-3 bg-secondary"
+      style="--bs-bg-opacity: 0.3"
+    >
+      <div class="d-flex align-items-center gap-3 col-4">
+        <img
+          class="user-profile-picture col-2 object-fit-cover"
+          src="https://buffer.com/library/content/images/size/w1200/2023/10/free-images.jpg"
+          style="aspect-ratio: 1/1"
+          alt=""
+        />
+        <div class="d-flex flex-column gap-1">
+          <div class="lh-1">Florêncio Gonçalves</div>
+          <span class="fst-italic text-success text--min lh-1 fw-medium"
+            >Online</span
+          >
+        </div>
+      </div>
+      <div class="ms-auto d-flex gap-2">
+        <button class="btn">
+          <i class="fa-solid fa-magnifying-glass text-secondary"></i></button
+        ><button class="btn">
+          <i class="fa-solid fa-ellipsis-vertical text-secondary"></i>
+        </button>
+      </div>
+    </div>
+    <!-- Chat Body -->
+    <div
+      class="chat-body h-100 overflow-x-hidden overflow-y-auto py-3 d-flex gap-1 flex-column mx-1 px-4"
+    ></div>
+    <!-- Emoji container -->
+    <div class="p-2 px-1 bg-gray--dark z-100 d-flex flex-column">
+      <ul class="nav mb-2">
+        <li class="nav-item col">
+          <button
+            type="button"
+            class="nav-link text-secondary fs-4 m-auto"
+            title="Recentes"
+          >
+            <i class="fa-regular fa-clock"></i>
+          </button>
+        </li>
+        <li class="nav-item col">
+          <button
+            type="button"
+            class="nav-link text-secondary fs-4 m-auto"
+            title="Smileys e pessoas"
+          >
+            <i class="fa-regular fa-face-grin-wide"></i>
+          </button>
+        </li>
+        <li class="nav-item col">
+          <button
+            type="button"
+            class="nav-link text-secondary fs-4 m-auto"
+            title="Animais e natureza"
+          >
+            <i class="fa-solid fa-paw"></i>
+          </button>
+        </li>
+        <li class="nav-item col">
+          <button
+            type="button"
+            class="nav-link text-secondary fs-4 m-auto"
+            title="Comidas e bebidas"
+          >
+            <i class="fa-solid fa-mug-hot"></i>
+          </button>
+        </li>
+        <li class="nav-item col">
+          <button
+            type="button"
+            class="nav-link text-secondary fs-4 m-auto"
+            title="Actividades"
+          >
+            <i class="fa-solid fa-futbol"></i>
+          </button>
+        </li>
+        <li class="nav-item col">
+          <button
+            type="button"
+            class="nav-link text-secondary fs-4 m-auto"
+            title="Viagens e locais"
+          >
+            Active link
+          </button>
+        </li>
+        <li class="nav-item col">
+          <button
+            type="button"
+            class="nav-link text-secondary fs-4 m-auto"
+            title=""
+          >
+            Active link
+          </button>
+        </li>
+        <li class="nav-item col">
+          <button
+            type="button"
+            class="nav-link text-secondary fs-4 m-auto"
+            title=""
+          >
+            Active link
+          </button>
+        </li>
+        <li class="nav-item col">
+          <button
+            type="button"
+            class="nav-link text-secondary fs-4 m-auto"
+            title=""
+          >
+            Active link
+          </button>
+        </li>
+      </ul>
+      <div
+        id="emojis-container"
+        class="overflow-y-auto overflow-x-hidden px-4 p-2 row-gap-3"
+      ></div>
+    </div>
+    <!-- Chat Footer -->
+    <div
+      class="chat-footer mt-auto bg-secondary px-4 py-2 position-relative"
+      style="--bs-bg-opacity: 0.1"
+    >
+      <div class="d-flex gap-3 align-items-center">
+        <button class="btn d-flex px-0">
+          <i class="fa-solid fa-face-grin-wide text-secondary fs-5"></i>
+        </button>
+        <button type="button" class="btn d-flex px-0">
+          <i class="fa-solid fa-plus text-secondary fs-5"></i>
+        </button>
+
+        <div class="col">
+          <input
+            type="text"
+            class="message-input form-control bg-secondary border-secondary text-light border-0 px-3 py-2 d-none"
+            name="message"
+            id="message-input"
+            style="--bs-bg-opacity: 0.3"
+            placeholder="Escreva a sua mensagem..."
+          />
+          <div
+            class="message-input form-control bg-gray border-gray text-light border-0 px-3 py-2"
+            contentEditable
+          >
+            as
+          </div>
+        </div>
+        <button
+          type="submit"
+          class="btn fw-medium px-2 py-0 fs-5 text-secondary"
+        >
+          <i class="fa-solid fa-paper-plane"></i>
+        </button>
+      </div>
+    </div>
+  </form>
+</div>
+<script type="text/javascript">
+  var socket = io("http://localhost:4000");
+
+  function renderMessage(message) {
+    $(".chat-body")
+      .append(`<div class="message--text bg-success ms-auto rounded-3 px-2 py-1 col-auto" style="--bs-bg-opacity: 0.8">
+        ${message}
+      </div>`);
+  }
+
+  $("#chat").submit((event) => {
+    event.preventDefault();
+
+    let message = $("input[name=message]").val();
+
+    if (message.length) {
+      renderMessage(message);
+
+      socket.emit("sendMessage", message);
+    }
+  });
+</script>
+<script type="module">
+  import Emojis from "/assets/scripts/emojis.js";
+
+  const emojis = new Emojis("emojis-container", "message-input");
+
+  async function main() {
+    await emojis.insertAllEmojisInto();
+    document.querySelectorAll(".set-emoji").forEach((btn) => {
+      btn.addEventListener("click", (evt) => emojis.getEmoji(evt));
+    });
+  }
+
+  main();
+</script>
+<%- include('./partials/footer.ejs') %>

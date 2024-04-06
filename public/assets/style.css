@@ -82,12 +82,12 @@ aside.aside {
     font-size: 1.175rem;
 }
 
-#emojis-container {
+#emojis-container, .emoji-subgroup--container {
     display: grid;
     grid-template-columns: repeat(15, auto);
     max-height: 42vh;
-    height: 15rem;
-    z-index: 1000;
+    overflow: hidden;
+    z-index: 100;
 }
 
 .set-emoji {
@@ -105,29 +105,29 @@ aside.aside {
 
 #emojis--container {
     height: 0;
-    max-height: 18rem;
-    display: flex;
-    transition: height 1s;
+    max-height: 20rem;
+    transition: all 500ms;
     overflow: hidden;
+    display: flex;
+}
+#emojis--container:not(._expanded) {
+    visibility: hidden;
 }
 #emojis--container._expanded {
     height: 100%;
 }
 
-@keyframes emojisSlideShow {
-    0% {
-        height: 0;
-    }
-    100% {
-        height: 100%;
-    }
+.emojis-nav .nav-link {
+    width: 100%;
+    padding-top: .25rem;
+    padding-bottom: .25rem;
 }
-@keyframes emojisSlideClose {
-    0% {
-        height: 100%;
-    }
-    100% {
-        height: 0;
-        display: none;
-    }
+
+.emojis-nav .ativate {
+    border-bottom: 5px solid;
+}
+
+.emojis-subgroup {
+    display: flex;
+    flex-direction: column;
 }

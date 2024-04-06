@@ -105,13 +105,13 @@
     <!-- Emoji container -->
     <div
       id="emojis--container"
-      class="p-2 px-1 bg-gray--dark z-100 flex-column _expanded"
+      class="p-2 px-1 bg-gray--dark z-100 flex-column"
     >
-      <ul class="nav mb-2">
+      <ul class="nav emojis-nav mb-2">
         <li class="nav-item col">
           <button
             type="button"
-            class="nav-link text-secondary fs-4 m-auto"
+            class="nav-link border-success text-secondary fs-4 m-auto ativate"
             title="Recentes"
           >
             <i class="fa-solid fa-clock"></i>
@@ -120,7 +120,7 @@
         <li class="nav-item col">
           <button
             type="button"
-            class="nav-link text-secondary fs-4 m-auto"
+            class="nav-link border-success text-secondary fs-4 m-auto"
             title="Smileys e pessoas"
           >
             <i class="fa-solid fa-face-grin-wide"></i>
@@ -129,7 +129,7 @@
         <li class="nav-item col">
           <button
             type="button"
-            class="nav-link text-secondary fs-4 m-auto"
+            class="nav-link border-success text-secondary fs-4 m-auto"
             title="Animais e natureza"
           >
             <i class="fa-solid fa-paw"></i>
@@ -138,7 +138,7 @@
         <li class="nav-item col">
           <button
             type="button"
-            class="nav-link text-secondary fs-4 m-auto"
+            class="nav-link border-success text-secondary fs-4 m-auto"
             title="Comidas e bebidas"
           >
             <i class="fa-solid fa-mug-hot"></i>
@@ -147,7 +147,7 @@
         <li class="nav-item col">
           <button
             type="button"
-            class="nav-link text-secondary fs-4 m-auto"
+            class="nav-link border-success text-secondary fs-4 m-auto"
             title="Actividades"
           >
             <i class="fa-solid fa-futbol"></i>
@@ -156,7 +156,7 @@
         <li class="nav-item col">
           <button
             type="button"
-            class="nav-link text-secondary fs-4 m-auto"
+            class="nav-link border-success text-secondary fs-4 m-auto"
             title="Viagens e locais"
           >
             <i class="fa-solid fa-car"></i>
@@ -165,7 +165,7 @@
         <li class="nav-item col">
           <button
             type="button"
-            class="nav-link text-secondary fs-4 m-auto"
+            class="nav-link border-success text-secondary fs-4 m-auto"
             title="Objectos"
           >
             <i class="fa-solid fa-lightbulb"></i>
@@ -174,7 +174,7 @@
         <li class="nav-item col">
           <button
             type="button"
-            class="nav-link text-secondary fs-4 m-auto"
+            class="nav-link border-success text-secondary fs-4 m-auto"
             title="Símbolos"
           >
             <i class="fa-solid fa-hashtag"></i>
@@ -183,7 +183,7 @@
         <li class="nav-item col">
           <button
             type="button"
-            class="nav-link text-secondary fs-4 m-auto"
+            class="nav-link border-success text-secondary fs-4 m-auto"
             title="Bandeiras"
           >
             <i class="fa-solid fa-flag"></i>
@@ -192,23 +192,27 @@
       </ul>
       <div
         id="emojis-container"
-        class="overflow-y-auto overflow-x-hidden px-4 p-2 row-gap-3"
+        class="overflow-y-auto overflow-x-hidden px-4 p-2 d-flex flex-column text-secondary fw-medium gap-2"
       ></div>
     </div>
     <!-- Chat Footer -->
     <div
-      class="chat-footer mt-auto bg-secondary px-4 py-2 position-relative"
+      class="chat-footer mt-auto bg-secondary px-4 py-2 position-relative z-100"
       style="--bs-bg-opacity: 0.1"
     >
       <div class="d-flex gap-3 align-items-center">
-        <button class="btn d-flex px-0" type="button" id="close-emojis">
-          <i class="fa-solid fa-xmark text-secondary fs-5"></i>
+        <button
+          class="btn d-flex px-0 text-secondary d-none"
+          type="button"
+          id="close-emojis"
+        >
+          <i class="fa-solid fa-xmark fs-4"></i>
         </button>
-        <button class="btn d-flex px-0" id="open-emojis">
-          <i class="fa-solid fa-face-grin-wide text-secondary fs-5"></i>
+        <button class="btn d-flex px-0 text-secondary" id="open-emojis">
+          <i class="fa-solid fa-face-grin-wide fs-4"></i>
         </button>
-        <button type="button" class="btn d-flex px-0">
-          <i class="fa-solid fa-plus text-secondary fs-5"></i>
+        <button type="button" class="btn d-flex px-0 text-secondary">
+          <i class="fa-solid fa-plus fs-4"></i>
         </button>
 
         <div class="col">
@@ -229,7 +233,7 @@
         </div>
         <button
           type="submit"
-          class="btn fw-medium px-2 py-0 fs-5 text-secondary"
+          class="btn fw-medium px-2 py-0 fs-4 text-secondary"
         >
           <i class="fa-solid fa-paper-plane"></i>
         </button>

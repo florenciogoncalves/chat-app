@@ -24,14 +24,80 @@ export default class Emojis {
     }
 
     async insertAllEmojisInto(fatherId = this.container) {
-        const container = document.getElementById(fatherId)
+        const fatherContainer = document.getElementById(fatherId)
         const emojis = await this.getAllEmojis
 
-        await emojis.forEach(emoji => {
-            const child = document.createElement('button')
-            child.classList.add('btn', 'fs-3', 'set-emoji', 'p-0', 'd-flex', 'align-items-center', 'justify-content-center')
-            child.textContent = emoji.character
-            container.appendChild(child)
+        const emojiGroupFilter = groups => {
+            return emojis.filter(emoji => {
+                return groups.includes(emoji.group)
+            }
+            )
+        }
+
+        const emojiGroups = [
+            {
+                title: 'Smileys e pessoas',
+                headers: ['smiley-emotion', 'people-body'],
+                emojis: emojiGroupFilter(['smiley-emotion', 'people-body'])
+            },
+            {
+                title: 'Animais e natureza',
+                headers: ['animals-nature'],
+                emojis: emojiGroupFilter(['animals-nature'])
+            },
+            {
+                title: 'Comidas e bebidas',
+                headers: ['food-drink'],
+                emojis: emojiGroupFilter(['food-drink'])
+            },
+            {
+                title: 'Actividades',
+                headers: ['activities'],
+                emojis: emojiGroupFilter(['activities'])
+            },
+            {
+                title: 'Viagens e locais',
+                headers: ['travel-places'],
+                emojis: emojiGroupFilter(['travel-places'])
+            },
+            {
+                title: 'Objectos',
+                headers: ['objects'],
+                emojis: emojiGroupFilter(['objects'])
+            },
+            {
+                title: 'Símbolos',
+                headers: ['symbols'],
+                emojis: emojiGroupFilter(['symbols'])
+            },
+            {
+                title: 'Bandeiras',
+                headers: ['flags'],
+                emojis: emojiGroupFilter(['flags'])
+            },
+        ]
+
+        emojiGroups.forEach(group => {
+            const container = document.createElement('div')
+            container.id = 'group-of-' + group.title
+            container.classList.add('emojis-subgroup', 'd-grid')
+
+            const title = document.createElement('p')
+            title.textContent = group.title
+            title.classList.add('emoji-subgroup--title', 'mb-2')
+            container.appendChild(title)
+
+            const container_emojis = document.createElement('div')
+            container_emojis.classList.add('emoji-subgroup--container', 'gap-2', 'overflow-hidden', 'col-12', 'mb-4')
+            group.emojis.forEach(emoji => {
+                const child = document.createElement('button')
+                child.classList.add('btn', 'fs-4', 'set-emoji', 'p-0', 'd-flex', 'align-items-center', 'justify-content-center', 'emoji-group--' + emoji.group)
+                child.textContent = emoji.character
+                container_emojis.appendChild(child)
+            })
+            container.appendChild(container_emojis)
+            fatherContainer.appendChild(container)
+
         })
     }
 

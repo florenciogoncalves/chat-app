@@ -1,8 +1,8 @@
 # ChatApp (Em desenvolvimento)
-> Um clone do web.whatsapp feito para testar minhas habilidades recém adquiridas com o node.js.</br></br>
+Um clone do web.whatsapp feito para testar minhas habilidades recém adquiridas com o node.js.</br></br>
 
 ## Features
-- [X] Responsividade
+- [ ] Responsividade
 
 ## Rodar o projecto
 - Clonar o repositório

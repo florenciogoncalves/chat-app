@@ -104,17 +104,29 @@ aside.aside {
 }
 
 #emojis--container {
-    height: 0;
+    margin-top: auto;
+    margin-bottom: 0;
+    height: max-content;
     max-height: 20rem;
-    transition: all 500ms;
     overflow: hidden;
-    display: flex;
+    display: none;
 }
 #emojis--container:not(._expanded) {
     visibility: hidden;
 }
 #emojis--container._expanded {
-    height: 100%;
+    animation: moveEmojisContainer 300ms linear forwards;
+    display: flex;
+}
+
+@keyframes moveEmojisContainer {
+    0% {
+        display: flex;
+        transform: translateY(100%);
+    }
+    100% {
+        transform: translateY(0);
+    }
 }
 
 .emojis-nav .nav-link {
@@ -130,4 +142,21 @@ aside.aside {
 .emojis-subgroup {
     display: flex;
     flex-direction: column;
+}
+
+.chat-body {
+    position: relative;
+}
+.chat-body::before {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    content: '';
+    top: 0;
+    left: 0;
+    z-index: -10;
+    opacity: .15;
+    background-attachment: fixed;
+    background-image: url(../assets/images/chat-background.png);
 }
